@@ -1,2 +1,3 @@
 # docnews
-implementação do tabnews curso.dev 
+
+implementação do tabnews curso.dev
