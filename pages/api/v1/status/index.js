@@ -28,16 +28,14 @@ async function getHandler(request, response) {
   const databaseopenedConnectionsValue =
     databaseOpenedConnectionsResult.rows[0].count;
 
-  response
-    .status(200)
-    .json({
-      updated_at: updatedAt,
-      dependecies: {
-        database: {
-          version: databaseVersionValue,
-          max_connections: parseInt(databaseMaxConnectionsValue),
-          opened_connections: databaseopenedConnectionsValue,
-        },
+  response.status(200).json({
+    updated_at: updatedAt,
+    dependecies: {
+      database: {
+        version: databaseVersionValue,
+        max_connections: parseInt(databaseMaxConnectionsValue),
+        opened_connections: databaseopenedConnectionsValue,
       },
-    });
+    },
+  });
 }
