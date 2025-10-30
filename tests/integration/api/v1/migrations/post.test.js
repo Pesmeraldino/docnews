@@ -3,9 +3,7 @@ import orchestrator from "tests/orchestrator.js";
 
 beforeAll(async () => {
   await orchestrator.waitForAllServices();
-  await database.query(
-    "drop schema if exists public cascade; create schema public;",
-  );
+  await orchestrator.clearDatabase();
 });
 
 test("POST to /api/v1/migrations should return 200", async () => {
