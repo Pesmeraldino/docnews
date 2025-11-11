@@ -1,7 +1,3 @@
-const {
-  parseSequenceOptions,
-} = require("node-pg-migrate/dist/operations/sequences");
-
 exports.up = (pgm) => {
   pgm.createTable("users", {
     id: {
@@ -24,7 +20,7 @@ exports.up = (pgm) => {
     },
 
     password: {
-      type: "varchar(72)",
+      type: "varchar(60)",
       notNull: true,
     },
 
